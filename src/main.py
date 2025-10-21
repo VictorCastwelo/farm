@@ -46,7 +46,15 @@ def manage_menu():
                 print('3.Registrar saída')
                 print('0.Voltar')
                 choice = input('\n> ')
-
+               
+                if choice == '1':
+                  from inputs import register_inputs
+                  name = input('Digite o nome do insumo: ')
+                  quantity = float(input('Quantidade disponível: '))
+                  unity = input('Unidade de medida: ')
+                  category = input('Classificação do insumo (RAÇÃO, SEMENTE, FERTILIZANTE OU MEDICAMENTO): ')
+                  register_animals(name, quantity, unity, category)
+                
         elif option == '0':
             break
         else:
