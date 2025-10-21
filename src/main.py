@@ -144,12 +144,12 @@ def movements_menu():
                     chosen_id = int(input('Digite o ID: '))
                     sell_animal(chosen_id)
                     print('Operação realizada!\n')
-                
+                    break
                 elif method == '2':
                     chosen_name = input('Digite o nome da espécie: ')
                     sell_animal(chosen_name)
                     print('Operação realizada!\n')
-
+                    break
                 else:
                     print('Opção inválida! Tente novamente\n')
                     continue
@@ -162,12 +162,12 @@ def movements_menu():
                     chosen_id = int(input('Digite o ID: '))
                     harvested_plant(chosen_id)
                     print('Operação realizada!\n')
-                    
+                    break
                 elif method == '2':
                     chosen_name = input('Digite o nome da cultura: ')
                     harvested_plant(chosen_name)
                     print('Operação realizada!\n')
-
+                    break
                 else:
                     print('Opção inválida! Tente novamente\n')
                     continue
@@ -180,12 +180,12 @@ def movements_menu():
                     chosen_id = int(input('Digite o ID: '))
                     consumption_input(chosen_id)
                     print('Operação realizada!\n')
-                    
+                    break
                 elif method == '2':
                     chosen_name = input('Digite o nome do insumo: ')
                     consumption_input(chosen_name)
                     print('Operação realizada!\n')
-
+                    break
                 else:
                     print('Opção inválida! Tente novamente\n')
                     continue
