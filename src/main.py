@@ -38,7 +38,15 @@ def manage_menu():
         elif option == '2':
             pass
         elif option == '3':
-            pass
+            while True:
+                
+                print('O que deseja realizar?')
+                print('1.Cadastrar insumo')
+                print('2.Registrar entrada')
+                print('3.Registrar saída')
+                print('0.Voltar')
+                choice = input('\n> ')
+
         elif option == '0':
             break
         else:
