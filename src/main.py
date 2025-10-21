@@ -82,9 +82,9 @@ def report_menu():
         print('0.Voltar ao menu')
         option = input('\n> ')
         
-        if option == '1':
+        if option == '1': #GERA RELATÓRIO GERAL
             pass
-        elif option == '2':
+        elif option == '2': #FAZ PESQUISA DE REGISTRO
             
             print('Escolha uma das categorias a ser listada')
             print('1.Animais')
@@ -95,21 +95,43 @@ def report_menu():
             if choice == '1':
                 method = method_search()
                 
-                print(search_animal(method),'\n')     
+                if method == '1': #BUSCAR POR ID
+                    chosen_id = int(input('Digite o ID: '))
+                    print(search_animal(chosen_id),'\n')     
 
+                elif method == '2': #BUSCAR POR NOME
+                    chosen_name = input('Digite o nome da espécie: ')
+                    print(search_animal(chosen_name),'\n')
+            
             elif choice == '2':
                 method = method_search()
+                
+                if method == '1': #BUSCAR POR ID
+                    chosen_id = int(input('Digite o ID: '))
+                    print(search_plant(chosen_id),'\n')     
 
-                print(search_plant(method))
+                elif method == '2': #BUSCAR POR NOME
+                    chosen_name = input('Digite o nome da espécie: ')
+                    print(search_plant(chosen_name),'\n')
+                
             elif choice == '3':
                 method = method_search()
 
-                print(search_inputs(method))
-            elif choice == '0':
+                if method == '1': #BUSCAR POR ID
+                    chosen_id = int(input('Digite o ID: '))
+                    print(search_inputs(chosen_id),'\n')     
+
+                elif method == '2': #BUSCAR POR NOME
+                    chosen_name = input('Digite o nome da espécie: ')
+                    print(search_inputs(chosen_name),'\n')
+
+
+            elif choice == '0': #VOLTA PARA O MENU DE RELATÓRIOS
                 print('Voltando...\n')
                 continue 
-        elif option == '0':
-            print('Voltando...\n')
+        
+        elif option == '0': #VOLTA AO MENU PRINCIPAL
+            print('Voltando ao menu principal...\n')
             break
             
 def movements_menu():
