@@ -3,7 +3,7 @@ list_animals = []
 id = 1
 def register_animals(specie, age, weight, status):
     global id
-    register = {'ID': id,'Specie': specie ,'Age': age ,'Weight': weight ,'Status': status}
+    register = {'ID': id,'Espécie': specie ,'Anos': age ,'Peso': weight ,'Status': status}
     list_animals.append(register)
     id += 1
     return list_animals
@@ -20,6 +20,6 @@ def update_animal(new_states, choice):
                 updates = input('Digite a especie do animal: ')
                 for item in list_animals:
                      if item[key] == updates:
-                         item['Specie'] == new_states
+                         item['Espécie'] == new_states
                          return list_animals
                       
