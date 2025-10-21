@@ -62,18 +62,18 @@ def manage_menu():
             continue
 def report_menu():
     def method_search():
-        methods_options = ('1','2')
-        print('Escolha o método de busca')
-        print('1.Buscar por ID')
-        print('2.Buscar por Nome')
-                
-        method = input('\n> ')
-        if method in methods_options:
-            return method
-        else:
-            print('Método inválido. Tente novamente!')
+        while True:
+            methods_options = ('1','2')
+            print('Escolha o método de busca')
+            print('1.Buscar por ID')
+            print('2.Buscar por Nome')
+                    
             method = input('\n> ')
-            return method
+            if method in methods_options:
+                return method
+            else:
+                print('Método inválido. Tente novamente!\n')
+                continue
     while True:
         print('Selecione uma opção')
 
@@ -113,8 +113,88 @@ def report_menu():
             break
             
 def movements_menu():
-    pass
+    def method_selection():
+        options_method = ('1','2')
+        while True:
+            print('Escolha o modo de seleção')
+            print('1.ID')
+            print('2.Nome, Espécie ou Cultura')
+            
+            choice = input('\n> ')
+            if choice in options_method:
+                return choice
+            else:
+                print('Opção inválida! Tente novamente\n')
+                continue
+    while True:
+        print('Selecione uma opção')
+        print('1.Venda de Animais')
+        print('2.Colheita de Plantas')
+        print('3.Consumo de Insumos')
+        print('0.Voltar ao menu principal')
 
+        option = input('\n> ')
+
+        if option == '1':
+            while True:
+                from movements import sell_animal
+                
+                method = method_selection()
+                if method == '1':
+                    chosen_id = int(input('Digite o ID: '))
+                    sell_animal(chosen_id)
+                    print('Operação realizada!\n')
+                
+                elif method == '2':
+                    chosen_name = input('Digite o nome da espécie: ')
+                    sell_animal(chosen_name)
+                    print('Operação realizada!\n')
+
+                else:
+                    print('Opção inválida! Tente novamente\n')
+                    continue
+        elif option == '2':
+            while True:
+                from movements import harvested_plant
+                
+                method = method_selection()
+                if method == '1':
+                    chosen_id = int(input('Digite o ID: '))
+                    harvested_plant(chosen_id)
+                    print('Operação realizada!\n')
+                    
+                elif method == '2':
+                    chosen_name = input('Digite o nome da cultura: ')
+                    harvested_plant(chosen_name)
+                    print('Operação realizada!\n')
+
+                else:
+                    print('Opção inválida! Tente novamente\n')
+                    continue
+        elif option == '3':
+             while True:
+                from movements import consumption_input
+                
+                method = method_selection()
+                if method == '1':
+                    chosen_id = int(input('Digite o ID: '))
+                    consumption_input(chosen_id)
+                    print('Operação realizada!\n')
+                    
+                elif method == '2':
+                    chosen_name = input('Digite o nome do insumo: ')
+                    consumption_input(chosen_name)
+                    print('Operação realizada!\n')
+
+                else:
+                    print('Opção inválida! Tente novamente\n')
+                    continue
+        elif option == '0':
+            print('Voltando...\n')
+            break
+        else:
+            print('Opção inválida! Tente novamente.\n')
+            continue
 
 while True:
     title = 'Sistema de Controle de Inventário de uma Fazenda Digital'
