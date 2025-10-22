@@ -144,7 +144,6 @@ def report_menu():
         option = input('\n> ')
         
         if option == '1': #GERA RELATÓRIO GERAL
-            pass
         elif option == '2': #FAZ PESQUISA DE REGISTRO
             
             print('Escolha uma das categorias a ser listada')
