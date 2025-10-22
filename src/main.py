@@ -61,7 +61,7 @@ def manage_menu():
                     method = method_selection()
                     new_states = input('Digite um novo Status:')
                     update_animal(new_states,method)
-                    print("Status atualizado com sucesso!")
+                    print("Status atualizado com sucesso!\n")
 
 
                 elif choice == '0':
