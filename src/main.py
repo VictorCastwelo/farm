@@ -53,7 +53,7 @@ def manage_menu():
                   quantity = float(input('Quantidade disponível: '))
                   unity = input('Unidade de medida: ')
                   category = input('Classificação do insumo (RAÇÃO, SEMENTE, FERTILIZANTE OU MEDICAMENTO): ')
-                  register_animals(name, quantity, unity, category)
+                  register_inputs(name, quantity, unity, category)
                 
         elif option == '0':
             break
