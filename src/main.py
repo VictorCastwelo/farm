@@ -105,6 +105,29 @@ def manage_menu():
                   unity = input('Unidade de medida: ')
                   category = input('Classificação do insumo (RAÇÃO, SEMENTE, FERTILIZANTE OU MEDICAMENTO): ')
                   register_inputs(name, quantity, unity, category)
+
+                elif choice == '2':
+                    from inputs import entry_quantity
+                    method = method_selection
+                    value_entry = int(input('Digite o valor de entrada: '))
+                    if method == '1':
+                        id_choice = int(input('Digite o id do insumo: '))
+                        entry_quantity(value_entry, id_choice)
+
+                    elif method == '2':
+                        name_choice = input('Digite o nome do insumo: ')
+                        entry_quantity(value_entry, name_choice)
+                elif choice == '3':
+                    from inputs import out_quantity
+                    method = method_selection
+                    value_out = int(input('Digite o valor de saída: '))
+                    if method == '1':
+                        id_choice = int(input('Digite o id do insumo: '))
+                        out_quantity(value_out, id_choice)
+
+                    elif method == '2':
+                        name_choice = input('Digite o nome do insumo: ')
+                        out_quantity(value_out, name_choice)
                 
         elif option == '0':
             break
