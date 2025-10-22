@@ -68,7 +68,27 @@ def manage_menu():
                     break
                 
         elif option == '2':
-            pass
+            while True:
+
+                print('O que deseja realizar?')
+                print('1.Cadastrar plantação')
+                print('0.Voltar')
+                choice = input('n/> ')
+
+                        if choice == '1':
+                            from plants import register_plants
+                            crop_type = input('Digite o tipo de cultura : ')
+                            area = float(input('Tamanho de área cultivada em hectare:' ))
+                            planting_date = input('Digite a data de plantio(YYYY-MM-DD): ')
+                            harvest_date = input('Digite a data de colheita(YYYY-MM-DD): ')
+                            status = input('Digite a situação atual da cultura(PLANTADA, COLHIDA, ROTAÇÃO, INATIVA): ')
+                            register_plants(crop_type, area, planting_date, harvest_date, status)
+
+                            print('Plantação cadastrada com sucesso!\n')
+                        elif choice == '0':
+                                print('Voltando...\n')
+                                break
+
         elif option == '3':
             while True:
                 
