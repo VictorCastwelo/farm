@@ -57,7 +57,13 @@ def manage_menu():
 
                     print('Animal cadastrado com sucesso!\n')
                 elif choice == '2':
-                    pass
+                    from animals import update_animal
+                    method = method_selection()
+                    new_states = input('Digite um novo Status:')
+                    update_animal(new_states,method)
+                    print("Status atualizado com sucesso!")
+
+
                 elif choice == '0':
                     break
                 
