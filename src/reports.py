@@ -39,13 +39,17 @@ def summary():
      generate = str(datetime.now())
      titulo_com_quebra = [generate,'\n','RELATORIO GERAL','\n']
      file.writelines(titulo_com_quebra)
-
+     file.write('SUMÁRIO DE ANIMAIS===')
      file.writelines(all_list(list_animals))
-
+     file.write('\n')
+     file.write('\n')
+     file.write('SUMÁRIO DE PLANTAS===')
      file.writelines(all_list(list_plants))
-
+     file.write('\n')
+     file.write('\n')
+     file.write('SUMÁRIO DE INSUMOS===')
      file.writelines(all_list(list_inputs))
-
+     file.write('\n')
 
      file.close()
      
