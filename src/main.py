@@ -146,6 +146,7 @@ def report_menu():
         if option == '1': #GERA RELATÓRIO GERAL
             from reports import summary
             summary()
+            print('Relatorio Gerado com Sucesso!\n')
         elif option == '2': #FAZ PESQUISA DE REGISTRO
             
             print('Escolha uma das categorias a ser listada')
