@@ -35,16 +35,16 @@ def summary():
      archive_name = ['report.txt']
      file = open('report.text', "w", encoding="utf-8")
      generate = datetime.now()
-     file.write(str(generate'\n'))
+     file.write(str(generate + '\n'))
      file.write("=" * 60)
      file.write(f"{'RELATÓRIO DE STATUS DA FAZENDA':^60}")
      file.write("=" * 60)
      
-     file.writelines(all_list(list_animals))
+     file.writelines(all_list(str(list_animals)))
 
-     file.writelines(all_list(list_plants))
+     file.writelines(all_list(str(list_plants)))
 
-     file.writelines(all_list(list_inputs))
+     file.writelines(all_list(str(list_inputs)))
 
 
      file.close()
