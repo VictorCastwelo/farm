@@ -28,6 +28,12 @@ def all_list(list_object):
         object += str(item)
     return object 
 
+def total_itens(list_object):
+    total= len(list_object)
+    return total
+
+
+
 #RELATORIO GERAL
 from datetime import datetime
 from animals import list_animals
@@ -41,14 +47,17 @@ def summary():
      file.writelines(titulo_com_quebra)
      file.write('SUMÁRIO DE ANIMAIS===')
      file.writelines(all_list(list_animals))
+     file.write(str(total_itens(list_animals)))
      file.write('\n')
      file.write('\n')
      file.write('SUMÁRIO DE PLANTAS===')
      file.writelines(all_list(list_plants))
+     file.write(str(total_itens(list_plants)))
      file.write('\n')
      file.write('\n')
      file.write('SUMÁRIO DE INSUMOS===')
      file.writelines(all_list(list_inputs))
+     file.write(str(total_itens(list_inputs)))
      file.write('\n')
 
      file.close()
