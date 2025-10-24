@@ -26,7 +26,7 @@ def all_list(list_object):
     for item in list_object:
         return item 
 
-RELATORIO GERAL
+#RELATORIO GERAL
 from datetime import datetime
 from animals import list_animals
 from plants import list_plants
