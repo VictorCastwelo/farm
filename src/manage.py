@@ -1,4 +1,4 @@
-import utils
+from utils import method_search, method_selection
 def manage_menu():
     while True:
         
@@ -32,7 +32,7 @@ def manage_menu():
                     print('Animal cadastrado com sucesso!\n')
                 elif choice == '2':
                     from animals import update_animal
-                    method = utils.method_selection()
+                    method = method_selection()
                     new_states = input('Digite um novo Status:')
                     update_animal(new_states,method)
                     print("Status atualizado com sucesso!\n")
@@ -47,7 +47,7 @@ def manage_menu():
                 print('O que deseja realizar?')
                 print('1.Cadastrar plantação')
                 print('0.Voltar')
-                choice = input('n/> ')
+                choice = input('\n> ')
 
                 if choice == '1':
                     from plants import register_plants
@@ -58,8 +58,9 @@ def manage_menu():
                     status = input('Digite a situação atual da cultura(PLANTADA, COLHIDA, ROTAÇÃO, INATIVA): ')
                     register_plants(crop_type, area, planting_date, harvest_date, status)
                     print('Plantação cadastrada com sucesso!\n')
+
                 elif choice == '0':
-                    print('Voltando...\n')
+                    print('\nVoltando...\n')
                     break
 
         elif option == '3':
@@ -79,10 +80,11 @@ def manage_menu():
                   unity = input('Unidade de medida: ')
                   category = input('Classificação do insumo (RAÇÃO, SEMENTE, FERTILIZANTE OU MEDICAMENTO): ')
                   register_inputs(name, quantity, unity, category)
+                  print('Insumo cadastrado!\n')
 
                 elif choice == '2':
                     from inputs import entry_quantity
-                    method = utils.method_selection
+                    method = method_selection()
                     value_entry = int(input('Digite o valor de entrada: '))
                     if method == '1':
                         id_choice = int(input('Digite o id do insumo: '))
@@ -91,19 +93,23 @@ def manage_menu():
                     elif method == '2':
                         name_choice = input('Digite o nome do insumo: ')
                         entry_quantity(value_entry, name_choice)
+                        print('\nOperação realizada com sucesso!\n')
                 elif choice == '3':
                     from inputs import out_quantity
-                    method = utils.method_selection
+                    method = method_selection()
                     value_out = int(input('Digite o valor de saída: '))
                     if method == '1':
                         id_choice = int(input('Digite o id do insumo: '))
                         out_quantity(value_out, id_choice)
-
+                        print('\nOperação realizada com sucesso!\n')
                     elif method == '2':
                         name_choice = input('Digite o nome do insumo: ')
                         out_quantity(value_out, name_choice)
-                
+                elif choice == '0':
+                    print('\nVoltando...\n')
+                    break
         elif option == '0':
+            print('\nVoltando ao menu principal...\n')
             break
         else:
             print('Opção inválida. Tente novamente!')

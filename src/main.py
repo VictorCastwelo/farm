@@ -25,6 +25,7 @@ while True:
         elif option == '3':
             movements_menu()
         elif option == '0':
+            print('\nEncerrando...\n')
             break    
     else:
         print('Opção inválida. Tente novamente!\n')

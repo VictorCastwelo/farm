@@ -13,9 +13,11 @@ def entry_quantity(value_entry, chosen):
     for item in list_inputs:
         for key in item:
             if item[key] == chosen:
-                origin_value = list_inputs.get('Quantidade') 
+                
+                origin_value = item.get('Quantidade') 
                 new_value = value_entry + origin_value
-                list_inputs['Quantidade'] = new_value
+                item['Quantidade'] = new_value
+
     return list_inputs
 
 def out_quantity(value_out, chosen):
@@ -23,9 +25,12 @@ def out_quantity(value_out, chosen):
     for item in list_inputs:
         for key in item:
             if item[key] == chosen:
-                origin_value = list_inputs.get('Quantidade') 
-                new_value = origin_value - value_out
-                list_inputs['Quantidade'] = new_value
+                
+                origin_value = item.get('Quantidade') 
                 if value_out > origin_value:
                     return 'Valor acima da quantidade disponível'
+            
+                new_value = origin_value - value_out
+                item['Quantidade'] = new_value
+                
     return list_inputs
