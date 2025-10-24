@@ -35,7 +35,7 @@ def summary():
      archive_name = ['report.txt']
      file = open('report.text', "w", encoding="utf-8")
      generate = datetime.now()
-     file.writelines(str(generate'\n'))
+     file.writelines(str(generate,'\n'))
      file.write("=" * 60)
      file.write(f"{'RELATÓRIO DE STATUS DA FAZENDA':^60}")
      file.write("=" * 60)
