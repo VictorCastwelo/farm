@@ -26,7 +26,7 @@ def all_list(list_object):
     for item in list_object:
         return item 
 
-#Relatorio Geral
+#RELATORIO GERAL
 from datetime import datetime
 from animals import list_animals
 from plants import list_plants
@@ -34,20 +34,25 @@ from inputs import list_inputs
 def summary():
      archive_name = ['report.txt']
      file = open('report.text', "w", encoding="utf-8")
-     generate = str(datetime.now())
+     generate = datetime.now()
      file.write(str(generate + '\n'))
      file.write("=" * 60)
      file.write(f"{'RELATÓRIO DE STATUS DA FAZENDA':^60}")
      file.write("=" * 60)
-     
-     file.writelines(all_list(str(list_animals)))
+     list_animals_str = str(list_animals)
+     list_plants_str = str(list_plants)
+     list_inputs_str = str(list_inputs)
 
-     file.writelines(all_list(str(list_plants)))
+     file.writelines(all_list(list_animals_str))
 
-     file.writelines(all_list(str(list_inputs)))
+     file.writelines(all_list(list_plants_str))
+
+     file.writelines(all_list(list_inputs_str))
 
 
      file.close()
+     
+
 
 from utils import method_search, method_selection
 
