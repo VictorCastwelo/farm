@@ -1,4 +1,4 @@
-
+from manage import manage_menu
 from reports import report_menu
 from movements import movements_menu
 
@@ -19,8 +19,7 @@ while True:
     option = input('> ')
     if option in options:
         if option == '1':
-            import manage
-            manage.manage_menu()
+            manage_menu()
         elif option == '2':
             report_menu()
         elif option == '3':
