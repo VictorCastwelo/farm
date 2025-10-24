@@ -55,7 +55,7 @@ def summary():
      
 
 
-from utils import method_search, method_selection
+from utils import method_selection
 
 def report_menu():
     while True:
@@ -79,7 +79,7 @@ def report_menu():
             print('0.Voltar')
             choice = input('\n> ')
             if choice == '1':
-                method = method_search()
+                method = method_selection()
                 
                 if method == '1': #BUSCAR POR ID
                     chosen_id = int(input('Digite o ID: '))
@@ -90,7 +90,7 @@ def report_menu():
                     print(search_animal(chosen_name),'\n')
             
             elif choice == '2':
-                method = method_search()
+                method = method_selection()
                 
                 if method == '1': #BUSCAR POR ID
                     chosen_id = int(input('Digite o ID: '))
@@ -101,7 +101,7 @@ def report_menu():
                     print(search_plant(chosen_name),'\n')
                 
             elif choice == '3':
-                method = method_search()
+                method = method_selection()
 
                 if method == '1': #BUSCAR POR ID
                     chosen_id = int(input('Digite o ID: '))
