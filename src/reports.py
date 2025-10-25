@@ -23,8 +23,16 @@ def search_inputs(chosen):
 
 
 def all_list(list_object):
+    object = ''
     for item in list_object:
-        return item 
+        object += str(item)
+    return object 
+
+def total_itens(list_object):
+    total= len(list_object)
+    return total
+
+
 
 #RELATORIO GERAL
 from datetime import datetime
@@ -35,21 +43,22 @@ def summary():
      archive_name = ['report.txt']
      file = open('report.text', "w", encoding="utf-8")
      generate = str(datetime.now())
-     file.write(str(generate))
      titulo_com_quebra = [generate,'\n','RELATORIO GERAL','\n']
-     file.write("=" * 60)
-     file.write(f"{titulo_com_quebra:^60}")
-     file.write("=" * 60)
-     list_animals_str = str(list_animals)
-     list_plants_str = str(list_plants)
-     list_inputs_str = str(list_inputs)
-
-     file.writelines(all_list(list_animals_str))
-
-     file.writelines(all_list(list_plants_str))
-
-     file.writelines(all_list(list_inputs_str))
-
+     file.writelines(titulo_com_quebra)
+     file.write('SUMÁRIO DE ANIMAIS===')
+     file.writelines(all_list(list_animals))
+     file.write(str(total_itens(list_animals)))
+     file.write('\n')
+     file.write('\n')
+     file.write('SUMÁRIO DE PLANTAS===')
+     file.writelines(all_list(list_plants))
+     file.write(str(total_itens(list_plants)))
+     file.write('\n')
+     file.write('\n')
+     file.write('SUMÁRIO DE INSUMOS===')
+     file.writelines(all_list(list_inputs))
+     file.write(str(total_itens(list_inputs)))
+     file.write('\n')
 
      file.close()
      
