@@ -22,7 +22,7 @@ def consumption_input(selected):
      movement = selection_operation(selected, list_inputs, operation= 'Consumido')
      return movement
 
-from utils import method_search, method_selection
+from utils import method_selection
 def movements_menu():
     while True:
         print('Selecione uma opção')
