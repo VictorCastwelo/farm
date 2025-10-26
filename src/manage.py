@@ -89,6 +89,7 @@ def manage_menu():
                     if method == '1':
                         id_choice = int(input('Digite o id do insumo: '))
                         entry_quantity(value_entry, id_choice)
+                        print('\nOperação realizada com sucesso!\n')
 
                     elif method == '2':
                         name_choice = input('Digite o nome do insumo: ')
@@ -107,6 +108,7 @@ def manage_menu():
                     elif method == '2':
                         name_choice = input('Digite o nome do insumo: ')
                         out_quantity(value_out, name_choice)
+                        print('\nOperação realizada com sucesso!\n')
                 
                 elif choice == '0':
                     print('\nVoltando...\n')
