@@ -2,6 +2,12 @@ from manage import manage_menu
 from reports import report_menu
 from movements import movements_menu
 
+from animals import list_animals
+from inputs import list_inputs
+from plants import list_plants
+from movements import list_movements
+
+from files import data_save
 
 while True:
     title = 'Sistema de Controle de Inventário de uma Fazenda Digital'
@@ -30,3 +36,8 @@ while True:
     else:
         print('Opção inválida. Tente novamente!\n')
         continue
+
+data_save(list_movements, 'movements.json')
+data_save(list_animals, 'animals.json')
+data_save(list_plants, 'plants.json')
+data_save(list_inputs, 'inputs.json')
