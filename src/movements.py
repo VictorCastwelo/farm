@@ -1,6 +1,9 @@
 from datetime import datetime
 from reports import search
-list_movements = []
+from files import data_load
+
+list_movements = data_load('movements.json')
+
 
 def selection_operation(selected, list_object, operation):
     for item in list_object:

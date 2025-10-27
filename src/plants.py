@@ -10,12 +10,17 @@ def dif_dates(date_initial, date_final):
     return total
 
 
+from files import data_load
 
-list_plants = []
+list_plants = data_load('plants.json')
 
-id = 1
+
 def register_plants(crop_type, area, planting_date, harvest_date, status):
-    global id
+    if len(list_plants) >= 1:
+        id = list_plants[-1].get('ID') + 1
+    else:
+        id = 1
+        
     day_haverst = dif_dates(planting_date,harvest_date)
 
     register = {'ID': id,'Tipo de cultura': crop_type ,'Área': area ,'Data de plantio': planting_date ,'Data da colheita': harvest_date ,'Status': status, 'Dia para a colheita': day_haverst}

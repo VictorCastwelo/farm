@@ -1,8 +1,15 @@
-list_inputs = []
+from files import data_load
 
-id = 1
+list_inputs = data_load('inputs.json')
+
+
+
 def register_inputs(name, quantity, unit, category):
-    global id
+    if len(list_inputs) >= 1:
+        id = list_inputs[-1].get('ID') + 1
+    else:
+        id = 1
+        
     register = {'ID': id,'Nome': name ,'Quantidade': quantity ,'Unidade': unit ,'Categoria': category}
     list_inputs.append(register)
     id += 1
