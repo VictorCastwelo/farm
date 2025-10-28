@@ -34,12 +34,12 @@ def manage_menu():
                             print('\nAnimal cadastrado com sucesso!\n')
                             break
                     except:
-                         print('Informação Invalida,Tente Novamente!')
+                         print('\nInformação Invalida,Tente Novamente!\n')
                          continue
                 elif choice == '2':
                     from animals import update_animal
                     method = method_selection()
-                    new_states = input('Digite um novo Status:')
+                    new_states = input('Digite um novo Status: ')
                     update_animal(new_states,method)
                     print("\nStatus atualizado com sucesso!\n")
 
@@ -49,26 +49,42 @@ def manage_menu():
                 
         elif option == '2':
             while True:
-
+                choice_options = ('1', '0')
                 print('O que deseja realizar?')
                 print('1.Cadastrar plantação')
                 print('0.Voltar')
                 choice = input('\n> ')
+                if choice in choice_options:
+                    if choice == '1':
+                        while True:
+                            from plants import register_plants
+                            
+                            try:
+                                crop_type = input('Digite o tipo de cultura : ')
+                                area = float(input('Tamanho de área cultivada em hectare:' ))
+                                planting_date = input('Digite a data de plantio(YYYY-MM-DD): ')
+                                harvest_date = input('Digite a data de colheita(YYYY-MM-DD): ')
+                                
+                                if planting_date.isdigit() and harvest_date.isdigit():
+                                    print('\nDatas preenchidas incorretamente! Tente novamente e siga o formato YYYY-MM-DD\n')
+                                    continue
 
-                if choice == '1':
-                    from plants import register_plants
-                    crop_type = input('Digite o tipo de cultura : ')
-                    area = float(input('Tamanho de área cultivada em hectare:' ))
-                    planting_date = input('Digite a data de plantio(YYYY-MM-DD): ')
-                    harvest_date = input('Digite a data de colheita(YYYY-MM-DD): ')
-                    status = input('Digite a situação atual da cultura(PLANTADA, COLHIDA, ROTAÇÃO, INATIVA): ')
-                    register_plants(crop_type, area, planting_date, harvest_date, status)
-                    print('\nPlantação cadastrada com sucesso!\n')
+                                status = input('Digite a situação atual da cultura(PLANTADA, COLHIDA, ROTAÇÃO, INATIVA): ')
+                                register_plants(crop_type, area, planting_date, harvest_date, status)
+                                print('\nPlantação cadastrada com sucesso!\n')
+                                break
 
-                elif choice == '0':
-                    print('\nVoltando...\n')
-                    break
-
+                            except ValueError:
+                                print('\nDado preenchido incorretamente! Tente novamente e utilize números\n')
+                            except:
+                                print('\nInformação preenchida incorretamente! Tente novamente\n')
+                                continue
+                    
+                    elif choice == '0':
+                        print('\nVoltando...\n')
+                        break
+                else:
+                    print('\nOpção inválida! Tente novamente\n')
         elif option == '3':
             while True:
                 
