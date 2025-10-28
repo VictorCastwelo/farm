@@ -1,0 +1,38 @@
+[
+  {
+    "ID": 1,
+    "Tipo de cultura": "milho",
+    "Área": 20.0,
+    "Data de plantio": "2025-10-25",
+    "Data da colheita": "2026-01-28",
+    "Status": "plantada",
+    "Dia para a colheita": 98
+  },
+  {
+    "ID": 2,
+    "Tipo de cultura": "soja",
+    "Área": 60.0,
+    "Data de plantio": "2025-11-20",
+    "Data da colheita": "2026-06-30",
+    "Status": "plantada",
+    "Dia para a colheita": 225
+  },
+  {
+    "ID": 3,
+    "Tipo de cultura": "arroz",
+    "Área": 70.0,
+    "Data de plantio": "2025-05-13",
+    "Data da colheita": "2025-08-15",
+    "Status": "plantada",
+    "Dia para a colheita": 92
+  },
+  {
+    "ID": 4,
+    "Tipo de cultura": "hortaliça",
+    "Área": 10.0,
+    "Data de plantio": "2025-10-20",
+    "Data da colheita": "2025-11-30",
+    "Status": "plantada",
+    "Dia para a colheita": 40
+  }
+]

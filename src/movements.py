@@ -1,6 +1,9 @@
 from datetime import datetime
 from reports import search
-list_movements = []
+from files import data_load
+
+list_movements = data_load('movements.json')
+
 
 def selection_operation(selected, list_object, operation):
     for item in list_object:
@@ -62,17 +65,17 @@ def movements_menu():
                     sell_animal(chosen_id)
                     operation_register(chosen_id, list_animals, description, operation='Venda', type_name='Espécie')
 
-                    print('Operação realizada!\n')
+                    print('\nOperação realizada!\n')
                     break
                 elif method == '2':
                     chosen_name = input('Digite o nome da espécie: ')
                     sell_animal(chosen_name)
                     operation_register(chosen_name, list_animals, description, operation='Venda', type_name='Espécie')
 
-                    print('Operação realizada!\n')
+                    print('\nOperação realizada!\n')
                     break
                 else:
-                    print('Opção inválida! Tente novamente\n')
+                    print('\nOpção inválida! Tente novamente\n')
                     continue
         elif option == '2':
             while True:
@@ -87,17 +90,17 @@ def movements_menu():
                     harvested_plant(chosen_id)
                     operation_register(chosen_id, list_plants, description, operation='Colheita', type_name='Tipo de cultura')
 
-                    print('Operação realizada!\n')
+                    print('\nOperação realizada!\n')
                     break
                 elif method == '2':
                     chosen_name = input('Digite o nome da cultura: ')
                     harvested_plant(chosen_name)
                     operation_register(chosen_name, list_plants, description, operation='Colheita', type_name='Tipo de cultura')
 
-                    print('Operação realizada!\n')
+                    print('\nOperação realizada!\n')
                     break
                 else:
-                    print('Opção inválida! Tente novamente\n')
+                    print('\nOpção inválida! Tente novamente\n')
                     continue
         elif option == '3':
              while True:
@@ -112,21 +115,21 @@ def movements_menu():
                     consumption_input(chosen_id)
                     operation_register(chosen_id, list_inputs, description, operation='Consumo de insumo', type_name='Nome')
 
-                    print('Operação realizada!\n')
+                    print('\nOperação realizada!\n')
                     break
                 elif method == '2':
                     chosen_name = input('Digite o nome do insumo: ')
                     consumption_input(chosen_name)
                     operation_register(chosen_name, list_inputs, description, operation='Consumo de insumo', type_name='Nome')
 
-                    print('Operação realizada!\n')
+                    print('\nOperação realizada!\n')
                     break
                 else:
-                    print('Opção inválida! Tente novamente\n')
+                    print('\nOpção inválida! Tente novamente\n')
                     continue
         elif option == '0':
-            print('Voltando...\n')
+            print('\nVoltando...\n')
             break
         else:
-            print('Opção inválida! Tente novamente.\n')
+            print('\nOpção inválida! Tente novamente.\n')
             continue

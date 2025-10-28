@@ -32,7 +32,18 @@ def total_itens(list_object):
     total= len(list_object)
     return total
 
+def list_record(list_object):
+    for item in list_object:
+        for key in item:
+            print(f'{key} - {item.get(key)}\n')
 
+def list_all_records():
+    print('\nRegistros de animais\n')
+    list_record(list_animals)
+    print('\nRegistro de plantas\n')
+    list_record(list_plants)
+    print('\nRegistro de insumos\n')
+    list_record(list_inputs)
 
 #RELATORIO GERAL
 from datetime import datetime
@@ -43,8 +54,8 @@ def summary():
      archive_name = ['report.txt']
      file = open('report.text', "w", encoding="utf-8")
      generate = str(datetime.now())
-     titulo_com_quebra = [generate,'\n','RELATORIO GERAL','\n']
-     file.writelines(titulo_com_quebra)
+     title = [generate,'\n','RELATORIO GERAL','\n']
+     file.writelines(title)
      file.write('SUMÁRIO DE ANIMAIS===')
      file.writelines(all_list(list_animals))
      file.write('\n')
@@ -78,13 +89,15 @@ def report_menu():
 
         print('1.Gerar relatório geral')
         print('2.Pesquisar registros')
+        print('3.Listar todos os registros')
         print('0.Voltar ao menu')
         option = input('\n> ')
         
         if option == '1': #GERA RELATÓRIO GERAL
             from reports import summary
             summary()
-            print('Relatorio Gerado com Sucesso!\n')
+            print('\nRelatorio Gerado com Sucesso!\n')
+        
         elif option == '2': #FAZ PESQUISA DE REGISTRO
             
             print('Escolha uma das categorias a ser listada')
@@ -128,11 +141,15 @@ def report_menu():
 
 
             elif choice == '0': #VOLTA PARA O MENU DE RELATÓRIOS
-                print('Voltando...\n')
+                print('\nVoltando...\n')
                 continue 
         
+        elif option == '3':
+            list_all_records()
+            print('\nListagem concluída!\n')
+        
         elif option == '0': #VOLTA AO MENU PRINCIPAL
-            print('Voltando ao menu principal...\n')
+            print('\nVoltando ao menu principal...\n')
             break
 
 

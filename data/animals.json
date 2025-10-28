@@ -1,0 +1,23 @@
+[
+  {
+    "ID": 1,
+    "Espécie": "bovino",
+    "Anos": 6,
+    "Peso": 60.0,
+    "Status": "ativo"
+  },
+  {
+    "ID": 2,
+    "Espécie": "caprino",
+    "Anos": 4,
+    "Peso": 30.0,
+    "Status": "ativo"
+  },
+  {
+    "ID": 3,
+    "Espécie": "suíno",
+    "Anos": 7,
+    "Peso": 60.0,
+    "Status": "ativo"
+  }
+]

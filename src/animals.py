@@ -1,11 +1,17 @@
-list_animals = []
+from files import data_load
 
-id = 1
+list_animals = data_load('animals.json')
+
 def register_animals(specie, age, weight, status):
-    global id
+    if len(list_animals) >= 1:
+        id = list_animals[-1].get('ID') + 1
+    else:
+        id = 1
+
     register = {'ID': id,'Espécie': specie ,'Anos': age ,'Peso': weight ,'Status': status}
     list_animals.append(register)
     id += 1
+    
     return list_animals
 
 def update_animal(new_states, choice):
