@@ -4,7 +4,6 @@ from files import data_load
 
 list_movements = data_load('movements.json')
 
-
 def selection_operation(selected, list_object, operation):
     for item in list_object:
         for key in item:
@@ -69,17 +68,22 @@ def movements_menu():
                         print('\nOperação realizada!\n')
                         break
                     
-                    except IndexError:
+                    except:
                         print('\nID inexistente na lista de registros! Tente novamente\n')
                         continue
 
                 elif method == '2':
-                    chosen_name = input('Digite o nome da espécie: ')
-                    sell_animal(chosen_name)
-                    operation_register(chosen_name, list_animals, description, operation='Venda', type_name='Espécie')
+                    try:
+                        chosen_name = input('Digite o nome da espécie: ')
+                        sell_animal(chosen_name)
+                        operation_register(chosen_name, list_animals, description, operation='Venda', type_name='Espécie')
 
-                    print('\nOperação realizada!\n')
-                    break
+                        print('\nOperação realizada!\n')
+                        break
+                    
+                    except:
+                        print('\nNome de espécie inexistente! Tente novamente\n')
+                        continue
                 else:
                     print('\nOpção inválida! Tente novamente\n')
                     continue
@@ -92,19 +96,29 @@ def movements_menu():
                 description = input('Digite uma descrição para a operação: ')
 
                 if method == '1':
-                    chosen_id = int(input('Digite o ID: '))
-                    harvested_plant(chosen_id)
-                    operation_register(chosen_id, list_plants, description, operation='Colheita', type_name='Tipo de cultura')
+                    try:
+                        chosen_id = int(input('Digite o ID: '))
+                        harvested_plant(chosen_id)
+                        operation_register(chosen_id, list_plants, description, operation='Colheita', type_name='Tipo de cultura')
 
-                    print('\nOperação realizada!\n')
-                    break
+                        print('\nOperação realizada!\n')
+                        break
+                    
+                    except:
+                        print('\nID inexistente na lista de registros! Tente novamente\n')
+                        continue
                 elif method == '2':
-                    chosen_name = input('Digite o nome da cultura: ')
-                    harvested_plant(chosen_name)
-                    operation_register(chosen_name, list_plants, description, operation='Colheita', type_name='Tipo de cultura')
+                    try:
+                        chosen_name = input('Digite o nome da cultura: ')
+                        harvested_plant(chosen_name)
+                        operation_register(chosen_name, list_plants, description, operation='Colheita', type_name='Tipo de cultura')
 
-                    print('\nOperação realizada!\n')
-                    break
+                        print('\nOperação realizada!\n')
+                        break
+                    
+                    except:
+                        print('\nTipo de cultura inexistente! Tente novamente\n')
+                        continue
                 else:
                     print('\nOpção inválida! Tente novamente\n')
                     continue
@@ -117,19 +131,29 @@ def movements_menu():
                 description = input('Digite uma descrição para a operação: ')
 
                 if method == '1':
-                    chosen_id = int(input('Digite o ID: '))
-                    consumption_input(chosen_id)
-                    operation_register(chosen_id, list_inputs, description, operation='Consumo de insumo', type_name='Nome')
+                    try:
+                        chosen_id = int(input('Digite o ID: '))
+                        consumption_input(chosen_id)
+                        operation_register(chosen_id, list_inputs, description, operation='Consumo de insumo', type_name='Nome')
 
-                    print('\nOperação realizada!\n')
-                    break
+                        print('\nOperação realizada!\n')
+                        break
+                    
+                    except:
+                        print('\nID inexistente na lista de registros! Tente novamente\n')
+                        continue
                 elif method == '2':
-                    chosen_name = input('Digite o nome do insumo: ')
-                    consumption_input(chosen_name)
-                    operation_register(chosen_name, list_inputs, description, operation='Consumo de insumo', type_name='Nome')
+                    try:
+                        chosen_name = input('Digite o nome do insumo: ')
+                        consumption_input(chosen_name)
+                        operation_register(chosen_name, list_inputs, description, operation='Consumo de insumo', type_name='Nome')
 
-                    print('\nOperação realizada!\n')
-                    break
+                        print('\nOperação realizada!\n')
+                        break
+                    
+                    except:
+                        print('\nNome de insumo inexistente! Tente novamente\n')
+                        continue
                 else:
                     print('\nOpção inválida! Tente novamente\n')
                     continue

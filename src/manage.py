@@ -77,7 +77,7 @@ def manage_menu():
                             planting_date = input('Digite a data de plantio(YYYY-MM-DD): ')
                             harvest_date = input('Digite a data de colheita(YYYY-MM-DD): ')
                                     
-                            if planting_date.isdigit() and harvest_date.isdigit():
+                            if planting_date.isnumeric() and harvest_date.isnumeric():
                                 print('\nDatas preenchidas incorretamente! Tente novamente e siga o formato YYYY-MM-DD\n')
                                 continue
 
