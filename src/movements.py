@@ -61,12 +61,18 @@ def movements_menu():
                 description = input('Digite uma descrição para a operação: ')
 
                 if method == '1':
-                    chosen_id = int(input('Digite o ID: '))
-                    sell_animal(chosen_id)
-                    operation_register(chosen_id, list_animals, description, operation='Venda', type_name='Espécie')
+                    try:
+                        chosen_id = int(input('Digite o ID: '))
+                        sell_animal(chosen_id)
+                        operation_register(chosen_id, list_animals, description, operation='Venda', type_name='Espécie')
 
-                    print('\nOperação realizada!\n')
-                    break
+                        print('\nOperação realizada!\n')
+                        break
+                    
+                    except IndexError:
+                        print('\nID inexistente na lista de registros! Tente novamente\n')
+                        continue
+
                 elif method == '2':
                     chosen_name = input('Digite o nome da espécie: ')
                     sell_animal(chosen_name)

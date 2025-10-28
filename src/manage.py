@@ -163,10 +163,12 @@ def manage_menu():
                             id_choice = int(input('Digite o id do insumo: '))
                             out_quantity(value_out, id_choice)
                             print('\nOperação realizada com sucesso!\n')
+
                         elif method == '2':
                             name_choice = input('Digite o nome do insumo: ')
                             out_quantity(value_out, name_choice)
                             print('\nOperação realizada com sucesso!\n')
+                            
                     except ValueError:
                         print('\nValor numérico inválido! Tente novamente\n')
                         continue
