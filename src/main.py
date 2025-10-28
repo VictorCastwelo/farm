@@ -1,3 +1,8 @@
+#VICTOR CASTELO BRANCO MIRANDA - 2025012435
+#MATHEUS SOARES DINIZ COUTO - 2025027545
+#LIVIA ARAUJO DA SILVA - 2025034586
+#GEOVANA MARIA DE ARAUJO SOUSA - 2025012533
+
 from manage import manage_menu
 from reports import report_menu
 from movements import movements_menu
@@ -34,7 +39,7 @@ while True:
             print('\nEncerrando...\n')
             break    
     else:
-        print('Opção inválida. Tente novamente!\n')
+        print('\nOpção inválida. Tente novamente!\n')
         continue
 
 data_save(list_movements, 'movements.json')

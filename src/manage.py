@@ -29,13 +29,13 @@ def manage_menu():
                     register_animals(specie, age, weight, status)
 
 
-                    print('Animal cadastrado com sucesso!\n')
+                    print('\nAnimal cadastrado com sucesso!\n')
                 elif choice == '2':
                     from animals import update_animal
                     method = method_selection()
                     new_states = input('Digite um novo Status:')
                     update_animal(new_states,method)
-                    print("Status atualizado com sucesso!\n")
+                    print("\nStatus atualizado com sucesso!\n")
 
 
                 elif choice == '0':
@@ -57,7 +57,7 @@ def manage_menu():
                     harvest_date = input('Digite a data de colheita(YYYY-MM-DD): ')
                     status = input('Digite a situação atual da cultura(PLANTADA, COLHIDA, ROTAÇÃO, INATIVA): ')
                     register_plants(crop_type, area, planting_date, harvest_date, status)
-                    print('Plantação cadastrada com sucesso!\n')
+                    print('\nPlantação cadastrada com sucesso!\n')
 
                 elif choice == '0':
                     print('\nVoltando...\n')
@@ -80,7 +80,7 @@ def manage_menu():
                   unity = input('Unidade de medida: ')
                   category = input('Classificação do insumo (RAÇÃO, SEMENTE, FERTILIZANTE OU MEDICAMENTO): ')
                   register_inputs(name, quantity, unity, category)
-                  print('Insumo cadastrado!\n')
+                  print('\nInsumo cadastrado!\n')
 
                 elif choice == '2':
                     from inputs import entry_quantity
@@ -119,5 +119,5 @@ def manage_menu():
             break
         
         else:
-            print('Opção inválida. Tente novamente!')
+            print('\nOpção inválida. Tente novamente!\n')
             continue

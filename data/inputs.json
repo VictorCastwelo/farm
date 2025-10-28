@@ -1,0 +1,23 @@
+[
+  {
+    "ID": 1,
+    "Nome": "ração bovina",
+    "Quantidade": 39.0,
+    "Unidade": "kg",
+    "Categoria": "ração"
+  },
+  {
+    "ID": 2,
+    "Nome": "semente de milho",
+    "Quantidade": 90.0,
+    "Unidade": "kg",
+    "Categoria": "semente"
+  },
+  {
+    "ID": 3,
+    "Nome": "adubo npk 20-10-10",
+    "Quantidade": 100.0,
+    "Unidade": "kg",
+    "Categoria": "fertilizante"
+  }
+]

@@ -23,7 +23,7 @@ def register_plants(crop_type, area, planting_date, harvest_date, status):
         
     day_haverst = dif_dates(planting_date,harvest_date)
 
-    register = {'ID': id,'Tipo de cultura': crop_type ,'Área': area ,'Data de plantio': planting_date ,'Data da colheita': harvest_date ,'Status': status, 'Dia para a colheita': day_haverst}
+    register = {'ID': id,'Tipo de cultura': crop_type ,'Área': area ,'Data de plantio': planting_date ,'Data da colheita': harvest_date ,'Status': status, 'Dias para a colheita': day_haverst}
     
     list_plants.append(register)
     id += 1

@@ -9,5 +9,5 @@ def method_selection():
             if choice in options_method:
                 return choice
             else:
-                print('Opção inválida! Tente novamente\n')
+                print('\nOpção inválida! Tente novamente\n')
                 continue
