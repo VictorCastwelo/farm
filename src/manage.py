@@ -22,14 +22,20 @@ def manage_menu():
 
                 if choice == '1':
                     from animals import register_animals
-                    specie = input('Digite o nome da especie: ')
-                    age = int(input('Digite a idade do animal (ANOS): '))
-                    weight = float(input('Digite o peso do animal (KG): '))
-                    status = input('Digite a situação do animal (ATIVO, VENDIDO OU MORTO): ')
-                    register_animals(specie, age, weight, status)
+                    try:
+                        while True:
 
-
-                    print('\nAnimal cadastrado com sucesso!\n')
+                            options_status = ('Ativo','Vendido','Morto')    
+                            specie = input('Digite o nome da especie: ')
+                            age = int(input('Digite a idade do animal (ANOS): '))
+                            weight = float(input('Digite o peso do animal (KG): '))
+                            status = input('Digite a situação do animal (ATIVO, VENDIDO OU MORTO): ')     
+                            register_animals(specie, age, weight, status)
+                            print('\nAnimal cadastrado com sucesso!\n')
+                            break
+                    except:
+                         print('Informação Invalida,Tente Novamente!')
+                         continue
                 elif choice == '2':
                     from animals import update_animal
                     method = method_selection()
@@ -75,10 +81,13 @@ def manage_menu():
                
                 if choice == '1':
                   from inputs import register_inputs
+                  option_inputs = ('Ração','Semente','Fertilizante')
                   name = input('Digite o nome do insumo: ')
                   quantity = float(input('Quantidade disponível: '))
                   unity = input('Unidade de medida: ')
                   category = input('Classificação do insumo (RAÇÃO, SEMENTE, FERTILIZANTE OU MEDICAMENTO): ')
+                  if category != option_inputs:
+                      print('Erro em Status de Insumo!')
                   register_inputs(name, quantity, unity, category)
                   print('\nInsumo cadastrado!\n')
 
