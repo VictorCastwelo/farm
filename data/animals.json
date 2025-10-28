@@ -4,7 +4,7 @@
     "Espécie": "bovino",
     "Anos": 6,
     "Peso": 60.0,
-    "Status": "ativo"
+    "Status": "Vendido"
   },
   {
     "ID": 2,
