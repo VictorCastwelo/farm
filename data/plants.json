@@ -34,5 +34,14 @@
     "Data da colheita": "2025-11-30",
     "Status": "plantada",
     "Dia para a colheita": 40
+  },
+  {
+    "ID": 5,
+    "Tipo de cultura": "algodão",
+    "Área": 50.0,
+    "Data de plantio": "2025-03-18",
+    "Data da colheita": "2025-09-20",
+    "Status": "plantada",
+    "Dias para a colheita": 182
   }
 ]

@@ -19,5 +19,12 @@
     "Quantidade": 100.0,
     "Unidade": "kg",
     "Categoria": "fertilizante"
+  },
+  {
+    "ID": 4,
+    "Nome": "esterco",
+    "Quantidade": 10.0,
+    "Unidade": "saco",
+    "Categoria": "fertilizante"
   }
 ]

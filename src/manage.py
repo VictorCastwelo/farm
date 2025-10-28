@@ -43,77 +43,105 @@ def manage_menu():
                 
         elif option == '2':
             while True:
-
+                choice_options = ('1', '0')
                 print('O que deseja realizar?')
                 print('1.Cadastrar plantação')
                 print('0.Voltar')
                 choice = input('\n> ')
 
-                if choice == '1':
-                    from plants import register_plants
-                    crop_type = input('Digite o tipo de cultura : ')
-                    area = float(input('Tamanho de área cultivada em hectare:' ))
-                    planting_date = input('Digite a data de plantio(YYYY-MM-DD): ')
-                    harvest_date = input('Digite a data de colheita(YYYY-MM-DD): ')
-                    status = input('Digite a situação atual da cultura(PLANTADA, COLHIDA, ROTAÇÃO, INATIVA): ')
-                    register_plants(crop_type, area, planting_date, harvest_date, status)
-                    print('\nPlantação cadastrada com sucesso!\n')
-
-                elif choice == '0':
-                    print('\nVoltando...\n')
-                    break
-
+                if choice in choice_options:
+                    if choice == '1':
+                        from plants import register_plants
+                        try:
+                            while True:
+                                crop_type = input('Digite o tipo de cultura : ')
+                                area = float(input('Tamanho de área cultivada em hectare:' ))
+                                planting_date = input('Digite a data de plantio(YYYY-MM-DD): ')
+                                harvest_date = input('Digite a data de colheita(YYYY-MM-DD): ')
+                                
+                                if planting_date.isdigit() and harvest_date.isdigit():
+                                    print('\nDatas preenchidas incorretamente! Tente novamente e siga o formato YYYY-MM-DD\n')
+                                    continue
+                                
+                                status = input('Digite a situação atual da cultura(PLANTADA, COLHIDA, ROTAÇÃO, INATIVA): ')
+                                register_plants(crop_type, area, planting_date, harvest_date, status)
+                                print('\nPlantação cadastrada com sucesso!\n')
+                                break
+                        except:
+                            print('\nInformação preenchida incorretamente! Tente novamente\n')
+                            continue
+                    elif choice == '0':
+                        print('\nVoltando...\n')
+                        break
+                else:
+                    print('\nOpção inválida! Tente novamente\n')
+                    continue
         elif option == '3':
             while True:
-                
+                choice_options = ('1', '2', '3', '0')
                 print('O que deseja realizar?')
                 print('1.Cadastrar insumo')
                 print('2.Registrar entrada')
                 print('3.Registrar saída')
                 print('0.Voltar')
                 choice = input('\n> ')
-               
-                if choice == '1':
-                  from inputs import register_inputs
-                  name = input('Digite o nome do insumo: ')
-                  quantity = float(input('Quantidade disponível: '))
-                  unity = input('Unidade de medida: ')
-                  category = input('Classificação do insumo (RAÇÃO, SEMENTE, FERTILIZANTE OU MEDICAMENTO): ')
-                  register_inputs(name, quantity, unity, category)
-                  print('\nInsumo cadastrado!\n')
+                if choice in choice_options:
+                    if choice == '1':
+                        unity_options = ('kg', 'l', 'saco', 'dose')
+                        from inputs import register_inputs
+                        try:
+                            while True:
+                                name = input('Digite o nome do insumo: ')
+                                quantity = float(input('Quantidade disponível: '))
+                                unity = input('Unidade de medida (KG, L, SACO, DOSE): ').lower()
+                                
+                                if unity not in unity_options:
+                                    print('\nUnidade inválida! Tente novamente\n')
+                                    continue
+                                
+                                category = input('Classificação do insumo (RAÇÃO, SEMENTE, FERTILIZANTE OU MEDICAMENTO): ')
+                                register_inputs(name, quantity, unity, category)
+                                print('\nInsumo cadastrado!\n')
+                                break
+                        except:
+                            print('\nInformação preenchida incorretamente! Tente novamente\n')
+                            continue
+                        
+                    elif choice == '2':
+                        from inputs import entry_quantity
+                        method = method_selection()
+                        value_entry = int(input('Digite o valor de entrada: '))
+                        if method == '1':
+                            id_choice = int(input('Digite o id do insumo: '))
+                            entry_quantity(value_entry, id_choice)
+                            print('\nOperação realizada com sucesso!\n')
 
-                elif choice == '2':
-                    from inputs import entry_quantity
-                    method = method_selection()
-                    value_entry = int(input('Digite o valor de entrada: '))
-                    if method == '1':
-                        id_choice = int(input('Digite o id do insumo: '))
-                        entry_quantity(value_entry, id_choice)
-                        print('\nOperação realizada com sucesso!\n')
-
-                    elif method == '2':
-                        name_choice = input('Digite o nome do insumo: ')
-                        entry_quantity(value_entry, name_choice)
-                        print('\nOperação realizada com sucesso!\n')
-                
-                elif choice == '3':
-                    from inputs import out_quantity
-                    method = method_selection()
-                    value_out = int(input('Digite o valor de saída: '))
+                        elif method == '2':
+                            name_choice = input('Digite o nome do insumo: ')
+                            entry_quantity(value_entry, name_choice)
+                            print('\nOperação realizada com sucesso!\n')
                     
-                    if method == '1':
-                        id_choice = int(input('Digite o id do insumo: '))
-                        out_quantity(value_out, id_choice)
-                        print('\nOperação realizada com sucesso!\n')
-                    elif method == '2':
-                        name_choice = input('Digite o nome do insumo: ')
-                        out_quantity(value_out, name_choice)
-                        print('\nOperação realizada com sucesso!\n')
-                
-                elif choice == '0':
-                    print('\nVoltando...\n')
-                    break
-        
+                    elif choice == '3':
+                        from inputs import out_quantity
+                        method = method_selection()
+                        value_out = int(input('Digite o valor de saída: '))
+                        
+                        if method == '1':
+                            id_choice = int(input('Digite o id do insumo: '))
+                            out_quantity(value_out, id_choice)
+                            print('\nOperação realizada com sucesso!\n')
+                        elif method == '2':
+                            name_choice = input('Digite o nome do insumo: ')
+                            out_quantity(value_out, name_choice)
+                            print('\nOperação realizada com sucesso!\n')
+                    
+                    elif choice == '0':
+                        print('\nVoltando...\n')
+                        break
+                else:
+                    print('\nOpção inválida! Tente novamente\n')
+                    continue
+
         elif option == '0':
             print('\nVoltando ao menu principal...\n')
             break
