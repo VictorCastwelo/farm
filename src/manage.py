@@ -12,35 +12,43 @@ def manage_menu():
 
         if option == '1':
             while True:
-                
+                choice_options = ('1', '2', '3', '0')
                 print('O que deseja realizar?')
 
                 print('1.Cadastrar animal')
                 print('2.Atualizar status de animal')
                 print('0.Voltar')
                 choice = input('\n> ')
-
-                if choice == '1':
-                    from animals import register_animals
-                    specie = input('Digite o nome da especie: ')
-                    age = int(input('Digite a idade do animal (ANOS): '))
-                    weight = float(input('Digite o peso do animal (KG): '))
-                    status = input('Digite a situação do animal (ATIVO, VENDIDO OU MORTO): ')
-                    register_animals(specie, age, weight, status)
-
-
-                    print('\nAnimal cadastrado com sucesso!\n')
-                elif choice == '2':
-                    from animals import update_animal
-                    method = method_selection()
-                    new_states = input('Digite um novo Status:')
-                    update_animal(new_states,method)
-                    print("\nStatus atualizado com sucesso!\n")
+                if choice in choice_options:
+                    if choice == '1':
+                        try:
+                            while True:
+                                from animals import register_animals
+                                specie = input('Digite o nome da especie: ')
+                                age = int(input('Digite a idade do animal (ANOS): '))
+                                weight = float(input('Digite o peso do animal (KG): '))
+                                status = input('Digite a situação do animal (ATIVO, VENDIDO OU MORTO): ')
+                                register_animals(specie, age, weight, status)
 
 
-                elif choice == '0':
-                    break
-                
+                                print('\nAnimal cadastrado com sucesso!\n')
+                                break
+                        except:
+                            print('\nInformação preenchida incorretamente! Tente novamente\n')
+                            continue
+                    elif choice == '2':
+                        from animals import update_animal
+                        method = method_selection()
+                        new_states = input('Digite um novo Status:')
+                        update_animal(new_states,method)
+                        print("\nStatus atualizado com sucesso!\n")
+
+
+                    elif choice == '0':
+                        break
+                else:
+                    print('\nOpção inválida! Tente novamente\n')
+                    continue
         elif option == '2':
             while True:
                 choice_options = ('1', '0')
