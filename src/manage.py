@@ -44,6 +44,7 @@ def manage_menu():
                 elif choice == '2':
                     from animals import update_animal
                     method = method_selection()
+                    options_status = ('ativo','vendido','morto') 
                     new_status = input('Digite um novo Status (ATIVO, VENDIDO OU MORTO): ')
                     
                     if new_status not in options_status:
@@ -121,7 +122,7 @@ def manage_menu():
                             name = input('Digite o nome do insumo: ')
                             quantity = float(input('Quantidade disponível: '))
                             unity = input('Unidade de medida: ')
-                            category = input('Classificação do insumo (RAÇÃO, SEMENTE, FERTILIZANTE OU MEDICAMENTO): ')
+                            category = input('Classificação do insumo (RAÇÃO, SEMENTE, FERTILIZANTE OU MEDICAMENTO): ').lower()
                             
                             if category not in category_inputs:
                                 print('\nOpção de categoria inválida! Tente novamente\n')

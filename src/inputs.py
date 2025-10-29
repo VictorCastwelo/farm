@@ -35,7 +35,7 @@ def out_quantity(value_out, chosen):
                 
                 origin_value = item.get('Quantidade') 
                 if value_out > origin_value:
-                    return 'Valor acima da quantidade disponível'
+                    return None
             
                 new_value = origin_value - value_out
                 item['Quantidade'] = new_value

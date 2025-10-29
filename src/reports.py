@@ -111,40 +111,85 @@ def report_menu():
                 
                 if method == '1': #BUSCAR POR ID
                     chosen_id = int(input('Digite o ID: '))
-                    print(search_animal(chosen_id),'\n')     
+                    animal = search_animal(chosen_id)
+                    
+                    if type(animal) == dict:
+                        print('\nRegistro encontrado!\n')
+                        print(animal,'\n')
+                    else:
+                        print('\nRegistro inexistente! Tente novamente\n')
+                        continue
 
                 elif method == '2': #BUSCAR POR NOME
                     chosen_name = input('Digite o nome da espécie: ')
-                    print(search_animal(chosen_name),'\n')
-            
+                    animal = search_animal(chosen_name)
+                    
+                    if type(animal) == dict:
+                        print('\nRegistro encontrado!\n')
+                        print(animal,'\n')
+                    else:
+                        print('\nRegistro inexistente! Tente novamente\n')
+                        continue
+
             elif choice == '2':
                 method = method_selection()
                 
                 if method == '1': #BUSCAR POR ID
                     chosen_id = int(input('Digite o ID: '))
-                    print(search_plant(chosen_id),'\n')     
+                    plant = search_plant(chosen_id)   
+                    
+                    if type(plant) == dict:
+                        print('\nRegistro encontrado!\n')
+                        print(plant,'\n')
+                    else:
+                        print('\nRegistro inexistente! Tente novamente\n')
+                        continue
 
                 elif method == '2': #BUSCAR POR NOME
-                    chosen_name = input('Digite o nome da espécie: ')
-                    print(search_plant(chosen_name),'\n')
-                
+                    chosen_name = input('Digite o nome da cultura: ')
+                    plant = search_plant(chosen_name)
+
+                    if type(plant) == dict:
+                        print('\nRegistro encontrado!\n')
+                        print(plant,'\n')
+                    else:
+                        print('\nRegistro inexistente! Tente novamente\n')
+                        continue
+
             elif choice == '3':
                 method = method_selection()
 
                 if method == '1': #BUSCAR POR ID
                     chosen_id = int(input('Digite o ID: '))
-                    print(search_inputs(chosen_id),'\n')     
+                    inputs = search_inputs(chosen_id)     
+                    
+                    if type(inputs) == dict:
+                        print('\nRegistro encontrado!\n')
+                        print(plant,'\n')
+                    else:
+                        print('\nRegistro inexistente! Tente novamente\n')
+                        continue
 
                 elif method == '2': #BUSCAR POR NOME
-                    chosen_name = input('Digite o nome da espécie: ')
-                    print(search_inputs(chosen_name),'\n')
-
-
+                    chosen_name = input('Digite o nome do insumo: ')
+                    inputs = search_inputs(chosen_name)
+                    
+                    if type(inputs) == dict:
+                        print('\nRegistro encontrado!\n')
+                        print(plant,'\n')
+                    else:
+                        print('\nRegistro inexistente! Tente novamente\n')
+                        continue
+                    
             elif choice == '0': #VOLTA PARA O MENU DE RELATÓRIOS
                 print('\nVoltando...\n')
                 continue 
-        
-        elif option == '3':
+            
+            else:
+                print('\nOpção inválida! Tente novamente\n')
+                continue
+
+        elif option == '3': #LISTA TODOS OS REGISTROS 
             list_all_records()
             print('\nListagem concluída!\n')
         
@@ -152,7 +197,9 @@ def report_menu():
             print('\nVoltando ao menu principal...\n')
             break
 
-
+        else:
+            print('\nOpção inválida! Tente novamente\n')
+            continue
 
      
           
