@@ -162,11 +162,21 @@ def manage_menu():
                         if method == '1':
                             id_choice = int(input('Digite o id do insumo: '))
                             out_quantity(value_out, id_choice)
+                            
+                            if type(out_quantity) != list:
+                                print('\nValor acima da quantidade disponível! Tente outro valor\n')
+                                continue
+                            
                             print('\nOperação realizada com sucesso!\n')
 
                         elif method == '2':
                             name_choice = input('Digite o nome do insumo: ')
                             out_quantity(value_out, name_choice)
+                            
+                            if type(out_quantity) != list:
+                                print('\nValor acima da quantidade disponível! Tente outro valor\n')
+                                continue
+
                             print('\nOperação realizada com sucesso!\n')
                             
                     except ValueError:
