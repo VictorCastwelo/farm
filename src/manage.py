@@ -27,7 +27,7 @@ def manage_menu():
                             specie = input('Digite o nome da especie: ')
                             age = int(input('Digite a idade do animal (ANOS): '))
                             weight = float(input('Digite o peso do animal (KG): '))
-                            status = input('Digite a situação do animal (ATIVO, VENDIDO OU MORTO): ').lower()
+                            status = input('Digite a situação do animal (ATIVO, VENDIDO OU MORTO): ')
                                 
                             if status not in options_status:
                                 print('\nStatus inválido! Tente novamente\n')
@@ -82,7 +82,7 @@ def manage_menu():
                                 print('\nDatas preenchidas incorretamente! Tente novamente e siga o formato YYYY-MM-DD\n')
                                 continue
 
-                            status = input('Digite a situação atual da cultura (PLANTADA, COLHIDA, ROTAÇÃO, INATIVA): ').lower()
+                            status = input('Digite a situação atual da cultura (PLANTADA, COLHIDA, ROTAÇÃO, INATIVA): ')
 
                             if status not in status_options:
                                 print('\nStatus inválido! Tente novamente\n')
@@ -122,7 +122,7 @@ def manage_menu():
                             name = input('Digite o nome do insumo: ')
                             quantity = float(input('Quantidade disponível: '))
                             unity = input('Unidade de medida: ')
-                            category = input('Classificação do insumo (RAÇÃO, SEMENTE, FERTILIZANTE OU MEDICAMENTO): ').lower()
+                            category = input('Classificação do insumo (RAÇÃO, SEMENTE, FERTILIZANTE OU MEDICAMENTO): ')
                             
                             if category not in category_inputs:
                                 print('\nOpção de categoria inválida! Tente novamente\n')
